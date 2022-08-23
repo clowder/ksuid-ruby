@@ -1,0 +1,53 @@
+require:
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  Include:
+    - "Gemfile"
+    - "Guardfile"
+    - "Rakefile"
+    - "*.gemspec"
+    - "lib/**/*.rb"
+    - "spec/**/*.rb"
+  Exclude:
+    - "*.gemfile"
+    - "vendor/bundle/**/*"
+    - "tmp/**/*"
+  NewCops: enable
+  TargetRubyVersion: 2.7
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/AbcSize:
+  Exclude:
+    - "Rakefile"
+    - "spec/**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "Rakefile"
+    - "spec/**/*_spec.rb"
+
+Metrics/MethodLength:
+  Exclude:
+    - "Rakefile"
+    - "spec/**/*_spec.rb"
+
+Naming/FileName:
+  Exclude:
+    - "Appraisals"
+    - "lib/activerecord-ksuid.rb"
+
+RSpec/DescribeClass:
+  IgnoredMetadata:
+    type:
+      - compatibility
+      - integration
+
+RSpec/ExampleLength:
+  Enabled: false
